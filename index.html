@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="zhouyunlong">
+<title>11.11无需抢单，你败家，新游给钱</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div id="loading" style="display:none;" class="loading"><div class="loadbox"><div class="loadlogo"></div><div class="loadbg"></div></div><div id="loadingNUM">100%</div></div>
+
+<div id="wrapper" class="wrapper">
+	<div id="main" class="contain">
+		<div class="adorn"></div>
+		<h2 class="logo">广州新游</h2>
+		<div class="tit"></div>
+		<div class="winning-txt">已帮<strong class="winning-num">84591</strong>人省钱</div>
+		<div class="gift">
+			<div class="point">点击要领取的礼品</div>
+			<ul id="giftList" class="gift-list">
+				<li data-gift="tl588jps"><i class="g g1"></i><p class="name">唯品会礼券</p></li>
+				<li data-gift="ymix8b7x"><i class="g g2"></i><p class="name">抱枕手办</p></li>
+				<li data-gift="js6jnggm"><i class="g g3"></i><p class="name">饿了么红包</p></li>
+				<li data-gift="3j6fqsoh"><i class="g g4"></i><p class="name">同程旅游红包</p></li>
+				<li data-gift="cksccahl"><i class="g g5"></i><p class="name">游戏礼包</p></li>				
+				<li data-gift="zm6unx64"><i class="g g6"></i><p class="name">酒仙网礼券</p></li>
+			</ul>
+			<div class="number">今天剩余抽奖次数：<span><i id="lave">3</i>次</span></div>
+		</div>
+		<div class="foot">
+			<a id="attentionBtn" href="javascript:;">关注可抽奖</a>
+			<a id="shareBtn" href="javascript:;">发福利给朋友</a>
+		</div>
+		<a id="explainBtn" href="javascript:;">活动说明</a>
+		<a id="myGift" href="javascript:;">我的奖品</a>
+	</div>
+</div>
+
+<!--弹出部分-->
+<div id="lottery" class="pop">
+	<div id="reversionBag" class="contain">
+		<a class="close" href="javascrip:;">关闭</a>
+		<div class="befor">
+			<div id="pressBtn" class="g-img"><i></i></div>
+			<div class="gold"></div><div class="star-icon"><i></i><i></i><i></i><i></i></div><div class="star-fixed"></div>
+			<p class="press-txt">长按钻石进行抽奖</p>
+		</div>
+		<div class="after">
+			<div class="g-img"><i id="circle"></i></div>
+			<div class="gold"></div><div class="star-fixed"></div>
+			<ul id="lotteryMain">
+
+				<li data-index="0" class="vph">
+					<div class="f36 y fb">恭喜亲</div>
+					<p class="y f24">您获得唯品会10%满减券，</p>
+					<div class="f22 fb">长按激活码可复制</div>
+					<p class="f32 fb">获得激活码：<span id="cdkey0"></span></p>
+					<a class="btn" href="http://click.union.vip.com/redirect.php?url=eyJzY2hlbWVjb2RlIjoiMmY0MXpnaGEiLCJkZXN0dXJsIjoiaHR0cDpcL1wvbS52aXAuY29tXC8iLCJ1Y29kZSI6ImFsbWlhMnh1In0=">我要领券</a>
+				</li>
+
+				<li data-index="1" class="baozhen">
+					<div style="font-size:30px;" class="fb y">恭喜亲获得江湖抱枕一个</div>
+					<p class="f22 fb">请填写您的信息，方便发放奖品</p>
+					<div class="form">
+						<div class="form-group">
+							<label for="userName">姓名：</label>
+							<input type="text" value="" id="userName">
+						</div>
+						<div class="form-group">
+							<label for="userTel">电话：</label>
+							<input type="tel" value="" id="userTel">
+						</div>
+						<a class="btn" id="submit" href="javascript:void(0)">提交信息</a>
+					</div>
+				</li>
+
+				<li data-index="2" class="elm">
+					<div class="f36 y fb">恭喜亲</div>
+					<p class="y f24">您获得饿了么1-10元随机红包</p>
+					<p class="f32 fb">赶紧点击按钮领取吧</p>
+					<a class="btn" id="url2" href="javascript:void(0)">我要领券</a>
+				</li>
+
+				<li data-index="3" class="tongchen">
+					<div class="f36 y fb">恭喜亲</div>
+					<p class="y f24">您获得同程网万元红包</p>
+					<p class="f32 fb">赶紧点击按钮领取吧</p>
+					<a class="btn" id="url3" href="javascript:void(0)">我要领红包</a>
+				</li>
+
+				<li data-index="4" class="libao">
+					<div class="libao-txt">
+						<div class="f36 y fb">恭喜亲</div>
+						<p class="y f24 mb15">获得《格斗江湖》大礼包</p>
+						<p class="fb f24"><span class="y">激活码为：</span><span id="cdkey4"></span></p>
+						<p class="mb15" style="font-size:16px">长按激活码可复制</p>
+						<div class="f22 fb y">礼包具体内容为：</div>
+						<div style="font-size:20px;line-height:24px;">钻石*5000 钻石*5000 钻石*5000 <br/>钻石*5000 钻石*5000 钻石*5000</div>
+					</div>
+					<a class="btn" id="url4" onclick="continueGo()" href="javascript:void(0)">继续领取礼品</a>
+				</li>
+
+				<li data-index="5" class="jiuxian">
+					<div class="f36 y fb">恭喜亲</div>
+					<p style="margin-bottom:10px;" class="y f24">您获得酒仙网10元直减现金券</p>
+					<p class="f22 fb">长按激活码可复制</p>
+					<p class="f32 fb">获得激活码：<span id="cdkey5"></span></p>
+					<a class="btn" id="url5" href="http://m.jiuxian.com?ref=sy&ozs=390467-1918">我要领券</a>
+				</li>
+
+				<li data-index="6" id="expire">
+					<div class="f36 y fb mb15">很遗憾</div>
+					<div class="f24 y">该礼品已被领完，</div>
+					<div class="f32 fb">请选择另外的礼品吧</div>
+					<a class="btn" onclick="continueGo()" href="javascript:void(0)">继续抽奖</a>
+				</li>
+
+				<li data-index="7" id="lave_num">
+					<div class="f36 y fb mb15">今天抽奖次数已用完</div>
+					<div class="f24 y">试试点击关注按钮或呼朋唤友</div>
+					<div class="f32 fb mb15">都可以增加抽奖机会哦</div>
+					<a class="btn" onclick="continueGo()" href="javascript:void(0)">继续抽奖</a>
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<!--我的奖品-->
+<div style="display:none" id="myPrize" class="pop">
+	<div id="reversionBag" class="contain">
+		<a class="close" href="javascrip:;">关闭</a>
+		<div class="befor">
+			<h3 class="t-name">我的奖品</h3>
+			<ul id="prizeList" class="prize-list">
+				<li>
+					<i class="g1"></i>
+					<p class="g-name">《格斗江湖》节日大礼包</p>
+					<p class="g-item">激活码为fdsnvt</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--活动说明-->
+<div id="expPop" class="pop">
+	<div id="reversionBag" class="contain">
+		<a class="close" href="javascrip:;">关闭</a>
+		<div class="befor">
+			<h3 class="t-name">活动说明</h3>
+			<ul class="exp-list">
+				<li><i>1</i>活动时间：11月4日-11月12日<div class="line"></div></li>
+				<li><i>2</i>每位用户每天均可获得1次抽奖机会<div class="line"></div></li>
+				<li><i>3</i>点击关注游戏订阅号按钮可增加一次抽奖机会<div class="line"></div></li>
+				<li><i>4</i>每位用户最多可获得一个游戏礼包、一份游戏周边、四张商户优惠券<div class="line"></div></li>
+				<li><i>5</i>《格斗江湖》将会在活动结束后5个工作日内进行礼品发放<div class="line"></div></li>
+				<li><i>6</i>分享到朋友圈或朋友，好友通过分享进入页面玩家可增加一次抽奖机会（进入页面好友越多抽奖机会越多哦）<div class="line"></div></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--关注可抽奖-->
+<div id="attentionPop" class="pop">
+	<div id="reversionBag" class="contain">
+		<a class="close" href="javascrip:;">关闭</a>
+		<div class="rwm">
+			<img src="images/gd_rwm.png"/><br/><br/>
+			<stong style="font-size:24px;color:#fff;">长按二维码，关注公众号</stong>
+			<p style="font-size:22px;color:#f9e24a;">了解《乱斗之王》最新资讯</p>
+		</div>		
+	</div>
+</div>
+
+<!--分享-->
+<div id="sharePop" class="pop">
+	<div id="reversionBag" class="contain">
+		<div class="shar-txt">
+			<div class="top-go"></div>
+			<p style="font-size:49px;color:#fceb54;">快做雷锋发福利吧！</p>
+			<p>(づ￣ 3￣)づ(づ￣ 3￣)づ</p>
+			<a id="zdl" href="javascript:void(0)">我知道了</a>
+		</div>	
+	</div>
+</div>
+
+
+<div id="landscape-hinter"></div>
+<script type="text/javascript" src="http://images.vxinyou.com/jsCommon/jquery-1.7.2.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	// 页面缩放组件
+	function calcZoom(){
+		var dw = document.documentElement.clientWidth,dh = document.documentElement.clientHeight, ds = dw / dh,pw = 640,ph = 960,ps = pw / ph;
+		var zoom = ds > ps ? dh / ph : dw / pw;
+		var stylesheet = '<style type="text/css">.contain{ -webkit-transform: scale('+ zoom +'); transform: scale('+ zoom +'); }</style>';
+		$('head').append(stylesheet);
+		if(dh > 567){
+			$('#main').css('margin-top','-524px');
+		}
+		if(dh > 626){
+			$('#main').css('margin-top','-524px');
+		}
+		if(dh > 735){
+			$('#main').css('margin-top','-474px');
+		}
+	};
+	window.onload = window.onresize = calcZoom;
+	
+	var game_url   = "http://event.vxinyou.net/activity/Bachelor/",    // 游戏接口URL
+		e_key      = 'rjv92gyd',  //活动ID
+	    share_hero = '11.11新游大狂欢，千万优惠随意领',  //分享标题
+	    share_img  = 'http://images.vxinyou.com/ml/zt/dyr/m/share.jpg',    //分享图标
+	    share_url  = 'http://gdjh.vxinyou.com/zt/shuangshiyi/',     //分享网址 
+	    gift_key   = '',  //礼品ID
+	    isChg      = false,  //判断是不开启抽奖
+	    is_focus   = 0, //是否关注
+	    indexNum   = 0, 
+	    lave_num   = 3,    //剩余抽奖次数
+	    openid     = 'fdffddsfd222ss'; 	
+
+    // $.getScript('http://event.vxinyou.net/wechat/JsApi/openid?mp_name=gedoujh&random=' + Math.random(), function(script, textStatus) {
+    //     if (textStatus == 'success'){
+    //         if (wechat_open_id == ''){
+    //             location.href = wechat_login_url;
+    //         }else{
+
+    //         	openid = wechat_open_id;
+    //         	$('#wrapper').fadeIn();
+    //         }
+    //     }else{
+    //         alert('加载微信用户open_id接口失败');
+    //     }
+    // });
+
+
+	$('#wrapper').fadeIn();
+	
+	
+	$( window ).bind("orientationchange", function(event) { 
+		if(event.orientation){ 
+			if(event.orientation == 'portrait'){ 
+				alert("portrait");//竖屏 
+			}else if(event.orientation == 'landscape') { 
+				alert("landscape");//横评 
+			} 
+		} 
+	}); 
+
+
+    //调用默认分享
+    $.getScript('http://event.vxinyou.net/wechat/JsApi/share?mp_name=gedoujh&random=' + Math.random(), function(script, textStatus) {
+        wxshare();
+    });
+
+    // 页面浏览统计 
+    $.get("http://event.vxinyou.net/activity/wx_count/view", {"count_id":37, "openid":openid}, function(response) {},"jsonp"); 
+
+    // 初始化首页数值
+    $.get(game_url+"ini/agent/wx", {"e_key":e_key,"openid":openid}, function(response){
+    	if(response.success){
+			console.log(response.data);
+			$('.winning-num').html(response.data.all_win_number);
+			$('#lave').html(response.data.valid_number);
+			lave_num = response.data.valid_number;
+			is_focus = response.data.is_focus;			
+			console.log(is_focus)
+		}else{
+			alert(response.message)
+		}
+    },"jsonp");
+
+
+
+	$("#giftList li").click(function(){
+		indexNum = $(this).index();
+		console.log(indexNum);
+		gift_key = $(this).data("gift");
+		$('#lottery').fadeIn();
+		//加头像
+		switch(indexNum){
+			case 0:$('#circle').css("background-position","-194px 0");break;
+			case 1:$('#circle').css("background-position","-194px -188px");break;
+			case 2:$('#circle').css("background-position","-388px 0");break;
+			case 3:$('#circle').css("background-position","0 -188px");break; 
+			case 4:$('#circle').css("background-position","-388px -188px");break;
+			case 5:$('#circle').css("background-position","0 0");break;   //-377px
+		};
+		$('#lotteryMain li:eq('+ indexNum +')').show().siblings().hide();
+	});
+
+ 
+
+	//长按钻石进行抽奖
+	$("#pressBtn").on('touchstart', function(e){
+		e.preventDefault();
+		isChg = false;
+		$('.befor').addClass('start');
+		timer = setTimeout(function(){
+            isChg = true;
+            $('.befor').removeClass('start');
+            lucky();
+        }, 1000);  //这里修改按的时长
+	}); 
+
+	$("#pressBtn").on('touchend', function(e){
+		e.preventDefault();
+		if(timer) {
+            clearTimeout(timer);
+        }
+        if(!isChg) {
+            $('.befor').removeClass('start');
+        }
+	});
+
+	function lucky(){ //抽奖
+		$('#reversionBag').addClass('reversion');
+		console.log(gift_key);
+		$.get(game_url+"lucky/agent/wx",{"e_key":e_key, "openid": openid, "gift_key":gift_key}, function(response){
+			if(response.success){
+				lave_num --;
+				$('#lave').html(lave_num);
+				console.log(response.data);
+				console.log(lave_num);
+				if(lave_num == 0){
+					$("#lave_num").show().siblings().hide();
+				}
+				if(response.data.win == 0){
+					$('#circle').css("background-position","0 -377px");
+					$("#expire").show().siblings().hide();
+				}
+
+				if(response.data.gift_cdkey){
+					$("#cdkey"+ indexNum).html(response.data.gift_cdkey);
+				};
+				if(response.data.gift_url){
+					$("#url"+ indexNum).attr("href",response.data.gift_url);
+				};				
+				
+			}else{
+				$("#expire").show().siblings().hide();
+			}
+		},"jsonp")
+	};
+
+	//继续抽奖
+	function continueGo(){
+		$('#lottery').fadeOut();
+		$('#reversionBag').removeClass('reversion');
+		$('#lotteryMain li').hide();
+		$('#circle').css("background-position","0 -377px");
+	};
+
+	//提交电话号码
+	$('#submit').on('touchstart', function(){
+		var name = $('#userName').val();	
+		var tel = $('#userTel').val();
+		if(name == ''){
+			alert('请填写您的姓名');
+			$('#userName').focus();
+			return false;
+		};
+		if(/^(1)\d{10}$/.test(tel)){
+		} else {
+			alert("请输入正确电话号码");
+			$('#userTel').focus();
+			return false;
+		};
+		$.get(game_url+"update_user/agent/wx",{"e_key":e_key, "openid":openid, "mobile":tel, "real_name":name}, function(response){
+			if(response.success){
+				$('#lottery').fadeOut();
+				console.log("收集电话和姓名成功！");
+			}else{
+				console.log(response.message);
+			}
+		},"jsonp");
+	});
+
+	//星星闪
+	star();
+	function star(){		
+		var i = Math.floor(Math.random()*4 + 1);
+		//console.log(i);
+		$('.star-icon i:eq(' + (i-1) + ')').fadeIn().siblings().fadeOut();
+		setTimeout("star()",300); 
+	}
+
+	//我的奖品
+	$("#myGift").on('touchstart', function(){
+		$.get(game_url+"get_my_prize/agent/wx",{"e_key":e_key, "openid":openid}, function(response){
+			if(response.success){
+				$('#prizeList').html("");
+				if(response.data != ''){
+					console.log(response.data)
+					var cdkeyUrl
+					$.each(response.data, function(index, value){
+						if(value.gift_cdkey){
+							cdkeyUrl = "激活码为：" + value.gift_cdkey;
+						};
+						if(value.gift_url){
+							cdkeyUrl = '<a href="'+ value.gift_url +'">点击领取</a>'	
+						};						
+						$('#prizeList').append('<li><i class="g-'+ value.gift_key +'"></i><p class="g-name">' + value.gift_text + '</p><p class="g-item">' + cdkeyUrl +'</p></li>');
+	                })
+				}else{
+					$('#prizeList').html('<p style="font-size:34px;text-align:center;color:#fff;">您还没有任何奖品！</p>');
+				}
+				
+				$('#myPrize').fadeIn();
+			}else{
+				alert(response.message)
+			}
+		},"jsonp");				
+	});
+	//活动说明
+	$("#explainBtn").on('touchstart', function(){
+		$('#expPop').fadeIn();
+	});
+	//关注可抽奖
+	$("#attentionBtn").on('touchstart', function(){
+		$('#attentionPop').fadeIn();
+		$.get(game_url+"focus/agent/wx",{"e_key":e_key, "openid":openid}, function(response){
+			if(response.success){
+				lave_num ++;
+				$('#lave').html(lave_num);
+				console.log("关注成功");
+			}else{
+				//alert(response.message);
+			}
+		},"jsonp");
+	});
+	//发福利给朋友
+	$("#shareBtn").on('touchstart', function(){
+		$('#sharePop').fadeIn();
+	});
+
+	// 关闭弹出	
+	$(".close,#zdl").on('touchstart', function(e){
+		e.preventDefault();
+		$('.pop').hide();
+		$('#reversionBag').removeClass('reversion');
+	});
+
+
+
+
+	function wxshare(){
+	    wx.ready(function () {
+	    // 分享到朋友圈
+	        wx.onMenuShareTimeline({
+	            title: share_hero, // 分享标题
+	            link: share_url, // 分享链接
+	            imgUrl: share_img, // 分享图标
+	            success: function () { 
+	                // 用户确认分享后执行的回调函数
+	                share();
+	            },
+	            cancel: function () { 
+	                // 用户取消分享后执行的回调函数
+	            }
+	        });
+
+	        // 分享给朋友
+	        wx.onMenuShareAppMessage({
+	            title: share_hero, // 分享标题
+	            desc: '我领到了XXX元XXX（商户名）优惠券，赶快进来领取吧~', // 分享描述
+	            link: share_url, // 分享链接
+	            imgUrl: share_img, // 分享图标
+	            type: '', // 分享类型,music、video或link，不填默认为link
+	            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+	            success: function () { 
+	                // 用户确认分享后执行的回调函数
+	                share();
+	            },
+	            cancel: function () { 
+	                // 用户取消分享后执行的回调函数
+	            }
+	        });
+	    });
+	};
+
+	//分享统计
+	function share(){ 
+	    $.get("http://event.vxinyou.net/activity/Bachelor/share", {"e_key":e_key, 'openid':openid}, function(response) {
+	        if (response.success)
+	        {
+	             window.location.reload();
+	        }else{
+	            alert(response.message);
+	        }
+	    },"jsonp");  
+	};
+
+</script>
+</body>
+</html>

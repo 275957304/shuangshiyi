@@ -1,0 +1,175 @@
+*{-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-webkit-tap-highlight-color:transparent}
+body{-webkit-overflow-scrolling:touch;color:#333;font:20px/1.5 'Microsoft Yahei',Tahoma,Arial,sans-serif;-moz-user-select: none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;}
+body,html{position:relative;/*height:100%;*/width:100%;margin:0;padding:0;/*overflow:hidden;*/background-color:#ffe80c;}
+i,em{font-style: normal;}p,ul,li{margin: 0;padding:0;}.y{color: #fbed4e;}.f36{font-size: 36px;}.f32{font-size: 32px}.f24{font-size: 24px;}.f22{font-size: 22px;}.fb{font-weight: bold;}
+/*css3*/
+@-webkit-keyframes load{0%{-webkit-transform:rotate(360deg)}100%{-webkit-transform:rotate(0)}}
+@-moz-keyframes load{0%{-moz-transform:rotate(360deg)}100%{-moz-transform:rotate(0)}}
+@-webkit-keyframes fadeInUp{0%{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);opacity:0}
+100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}
+}
+@keyframes fadeInUp{0%{-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);opacity:0}
+100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}
+}
+
+@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+
+@-webkit-keyframes fadeInLeft{0%{-webkit-transform:translate3d(100px,0,0);transform:translate3d(100px,0,0);opacity:0}
+100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}
+}
+@keyframes fadeInLeft{0%{-webkit-transform:translate3d(100px,0,0);transform:translate3d(100px,0,0);opacity:0}
+100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}
+}
+
+@-webkit-keyframes rotateCubeTopIn {
+0% {opacity: .3;-webkit-transform: translateY(100%) rotateX(-90deg)}
+50% {-webkit-animation-timing-function: ease-out;-webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg)}
+}
+
+@keyframes rotateCubeTopIn{
+	0% {opacity: .3;-webkit-transform: translateY(100%) rotateX(-90deg);transform: translateY(100%) rotateX(-90deg)}
+50% {-webkit-animation-timing-function: ease-out;animation-timing-function: ease-out; -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);transform: translateY(50%) translateZ(-200px) rotateX(-45deg)}
+}
+
+@-webkit-keyframes sbs{0%,50%{opacity:0;-webkit-transform:scale(0)}
+70%{opacity:.8;-webkit-transform:scale(1.5)}
+80%{opacity:1;-webkit-transform:scale(.8)}
+90%{-webkit-transform:scale(1.2)}
+}
+@keyframes sbs{0%,50%{opacity:0;transform:scale(0)}
+70%{opacity:.8;transform:scale(1.5)}
+80%{opacity:1;transform:scale(.8)}
+90%{transform:scale(1.2)}
+}
+
+#landscape-hinter{position:fixed;top:0;left:0;height:100%;width:100%;background-color:#eee;z-index:999;display:none;pointer-events:none}
+#landscape-hinter::before{content:' ';position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);height:40%;width:40%;background-image:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/landscape-hint.png);background-position:center;background-repeat:no-repeat;background-size:auto 100%}
+/*@media screen and (orientation:landscape){#landscape-hinter{display:block}
+}*/
+
+.logo,.top-go{-webkit-animation:fadeInUp 300ms ease-in 300ms both;animation:fadeInUp 300ms ease-in 300ms both}
+.tit{-webkit-animation:fadeInUp 300ms ease-in 400ms both;animation:fadeInUp 300ms ease-in 400ms both}
+.winning-txt{-webkit-animation:fadeInUp 300ms ease-in 500ms both;animation:fadeInUp 300ms ease-in 500ms both}
+.gift{-webkit-animation:fadeIn 600ms ease-in 900ms both;animation:fadeIn 600ms ease-in 900ms both}
+
+.g,.prize-list li,.prize-list li i,.line{background-image:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/gift.jpg?v=5); background-repeat: no-repeat;}
+.loading{background:#fff;width:100%;height:100%;position:absolute;z-index:999; text-align: center; color: #f35805;}
+.loadbox{display:block;position:relative;width:70px;height:70px;margin:0 auto;margin-top:50%;}
+.loadlogo{display:block;position:absolute;z-index:1001;width:60px;height:60px;top:0;left:4px;background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/load.png) no-repeat;background-size:100%}
+.loadbg{display:block;position:absolute;z-index:1000;width:70px;height:70px;background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/loadbg.png) no-repeat;background-size:100%;-webkit-animation:load 1s ease-in-out infinite both;-moz-animation:load 1s ease-in-out infinite both}
+
+.wrapper{width: 100%;height: 100%; position: relative;/*overflow: hidden;*/ display: none; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/bg.jpg) no-repeat center top; background-size: 100% auto;}
+.contain{/*background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/bg2.jpg) no-repeat;*/ background-size:100% auto; transform-origin: center center;position: absolute; top: 50%; left: 50%;width: 640px;height: 960px;margin-top: -480px;margin-left: -320px; z-index: 9;}
+.adorn{background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/adorn.png) no-repeat; width: 100%; min-height: 800px; position: absolute; left: 0; top: 0; z-index: 0;}
+.logo{display: block; width: 140px; height: 40px; margin:0 0 0 -70px; position: absolute; left: 50%; top:24px; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/logo.png) no-repeat; overflow: hidden; text-indent: -999px; }
+.tit{width: 445px; height: 170px; position: absolute; left: 50%; top: 55px; margin-left: -222px; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/tit.png) no-repeat;}
+.winning-txt{font-size: 24px; color: #97490f; position: absolute; left: 0; right: 0; top: 285px; text-align: center;}
+.winning-num{font-size: 48px; color: #c31500;}
+#main{padding-top: 380px;}
+.gift{width: 560px; height: 465px; background-color: #ffcc00; border-radius: 10px; margin: 0 0 0 30px; position: relative; border-top: 4px solid #ffbe00; border-bottom: 4px solid #fff51b; box-shadow: 0 0 2px rgba(0, 0, 0, .27) inset; z-index: 99;}
+.point{width: 243px; height: 30px; line-height: 30px; color: #ffff00; background-color: #f35210; border: 3px solid #ffe709; text-align: center; position: absolute; left: 50%; top: -17px; margin-left: -121px; border-radius: 30px;}
+.gift-list{padding: 10px 0 0 0; margin: 0; height: 405px;}
+.gift-list li{width: 160px; height: 170px; background-color: #f35210; border-bottom: 4px solid #fba200; list-style: none; float: left; margin: 20px 0 0 20px; border-radius: 4px;}
+.gift-list .g{display: block; width:148px; height: 120px; margin: 6px auto 0; background-color: #fff492; border-radius: 4px;}
+.g1{background-position: 0 -17px;}
+.g2{background-position: -158px -17px;}
+.g3{background-position: -316px -17px;}
+.g4{background-position: 0 -147px;}
+.g5{background-position: -158px -147px;}
+.g6{background-position: -316px -147px;}
+.name{margin: 0; font:bold 20px/44px 'Microsoft Yahei'; color: #fff; text-align: center;}
+.number{text-align: center; font-size: 22px; color: #97490f;}
+.number span{font-weight: bold; font-size: 24px; color: #ff3506;}
+.foot{width: 560px; margin:20px auto;}
+.foot a{display: inline-block; height: 60px; width: 270px; border-radius: 30px; font:bold 26px/60px 'Microsoft Yahei'; color: #fff; text-decoration: none; text-align: center;}
+#attentionBtn{border-bottom: 4px solid #a41300; background: #fd3600; background:-webkit-gradient(linear, 0 0, 0 100%, from(#ff4300), to(#e02f00));}
+#shareBtn{float: right; border-bottom: 4px solid #236c00; background: #3cb400; background:-webkit-gradient(linear, 0 0, 0 100%, from(#48da00), to(#339900));}
+#explainBtn{position: absolute; right: 10px; top: 400px; width: 20px; height: 90px; background-color: #f33b10; font-size: 18px; color: #ffff00; line-height: 20px; padding:20px 10px; text-decoration: none; border-radius:0 8px 8px 0;}
+#myGift{position: absolute; right: 10px; top: 542px; width: 20px; height: 90px; background-color: #0195ca; font-size: 18px; color: #fff; line-height: 20px; padding:20px 10px; text-decoration: none; border-radius:0 8px 8px 0;}
+
+.pop{width: 100%;height: 100%; position: fixed; left: 0; right: 0; top: 0; bottom:0; overflow: hidden; display: none; background: rgba(0, 0, 0, .78); z-index: 999;}
+.pop .contain{width: 480px; height: 706px; margin: -353px 0 0 -240px; background:none;}
+.t-name{font-size: 35px; text-align: center; color: #fbeb4e; margin: 90px 0 0 0;}
+.prize-list{width: 375px; margin: 84px auto 0; height: 420px; overflow-y:auto; list-style: none; padding: 0;}
+.prize-list li{margin-bottom: 8px; height: 70px; width: 375px; padding-top: 10px; background-position: 0 78px;}
+.prize-list li i{display: block; float: left; width: 63px; height: 63px; margin: 0 5px 0 0;}
+
+
+
+.prize-list .g-tl588jps,.prize-list .g-wlwja1jk,.prize-list .g-ewllhzw0,.prize-list .g-qgqxbt3y{background-position: 0 -283px;}
+.prize-list .g-ymix8b7x{background-position: -70px -283px;}
+.prize-list .g-js6jnggm,.prize-list .g-szu5gdll,.prize-list .g-u4e9zhn5,.prize-list .g-89lg3qmg{background-position: -140px -283px;}
+.prize-list .g-3j6fqsoh,.prize-list .g-vuerdj8h,.prize-list .g-gegqif77,.prize-list .g-xhnpfcnk{background-position: -210px -283px;}
+.prize-list .g-cksccahl{background-position: -281px -283px;}
+.prize-list .g-zm6unx64,.prize-list .g-uh8f3f6g,.prize-list .g-l5m49hhd,.prize-list .g-geqyz17r{background-position: -351px -283px;}
+/*格斗之皇*/
+.prize-list .g-fdqzhybg{background-position: -421px -283px;}
+.prize-list .g-l3rrwfwb{background-position: -491px -283px;}
+
+/*魔力时代*/
+.prize-list .g-1v6ssc0o{background-position: -561px -283px;}
+.prize-list .g-uflx6i7f{background-position: -631px -283px;}
+
+/*乱斗之王*/
+.prize-list .g-1yb0ycfi{background-position: -701px -283px;}
+.prize-list .g-1qz81et5{background-position: -770px -283px;}
+ 
+
+
+
+.prize-list .g-name{font-size: 24px; color: #fff; margin:0; line-height: 30px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.prize-list .g-item{font-size: 20px; color: #f9e24a; margin:0;}
+.exp-list{list-style: none; width: 370px; margin: 90px auto 0; padding-left: 35px;}
+.exp-list li{position: relative; text-align: justify; font-size: 18px; color: #fff; padding-top: 7px; line-height: 25px; margin-bottom: 10px;}
+.exp-list i {position: absolute;left: -29px;top: 10px; border-radius:50%; width: 23px;height: 23px;line-height: 23px;font-size: 18px;color: #fff;background-color: #c72305;display: block;text-align: center;font-style: normal;}
+.line{width: 370px; height: 3px; margin-top: 5px;}
+.rwm{text-align: center; padding-top: 50px;}
+.shar-txt{font-size: 34px; color: #fff; text-align: center; padding-top: 200px;}
+.top-go{background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/top.png) no-repeat; width: 91px; height: 135px; position: absolute; right: -45px; top: -95px;}
+#zdl{color: #fff; font-size: 32px; width: 215px; height: 85px; line-height: 85px; border-radius: 10px; background-color: #ff3e00; display: inline-block; text-decoration: none; margin: 50px auto;}
+.close{position: absolute; right: -46px; top: -8px; display: block; width: 87px; height: 91px; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/close.png) no-repeat; overflow: hidden; text-indent: -999px; z-index: 99;}
+.reversion .close{-webkit-animation: sbs 1s ease-in-out;animation: sbs 1s ease-in-out;}
+
+
+
+.befor,.after{backface-visibility: hidden;transition: 0.6s ease-out;-webkit-transition: .6s ease-out; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d;-o-transform-style: preserve-3d;transform-style: preserve-3d;position: absolute;top: 0;left: 0; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/bag.png) no-repeat; width: 480px; height: 706px;}
+.befor{z-index: 2;transform: rotateY(0deg);transform: rotateY(0deg); -webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg);}
+.after{ z-index:1;transform: rotateY(-180deg);transform: rotateY(-180deg);-webkit-transform: rotateY(-180deg);-moz-transform: rotateY(-180deg);
+-ms-transform: rotateY(-180deg);-o-transform: rotateY(-180deg);}
+.reversion {-webkit-perspective: 1000px; /*父类容器中 perspective 子类允许透视*/perspective: 1000px;transition:transform .6s ease-out;transition: transform .6s ease-out;-webkit-transition: transform .6s ease-out;-webkit-transform-style: preserve-3d; /*使其子类变换后得以保留 3d转换后的位置*/transform-style: preserve-3d; display:block; position: relative;}
+.reversion .after {transform: rotateY(0deg); -webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg); z-index:2;}
+.reversion .befor{ transform: rotateY(180deg);-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg); z-index:1;}
+
+.g-img{width: 165px; height: 165px; border-radius: 50%; background-color: #ffb500; border: 20px solid #fbed4e; margin: 80px auto 0; overflow: hidden; box-shadow: 0 12px 0 #9d2a02;}
+#pressBtn{position: relative; z-index: 999;}
+#pressBtn .vxinyou{display: block; width: 165px; height: 165px; border-radius: 50%; z-index：-1; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/xinyou.png) no-repeat center; -webkit-transform: rotate(0deg) translateZ(0); transform: rotate(0deg) translateZ(0); -webkit-transition:all 1.5s ease-out; transition:all 1.5s ease-out;}
+.start #pressBtn .vxinyou{-webkit-transform:rotate(1080deg) translateZ(0);}
+.press-txt{text-align: center; font-weight: bold; font-size: 36px; color: #fbed4e; margin-top: 120px;}
+.gold{background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/gold.png) no-repeat; width: 450px; height: 285px; position: absolute; left: 20px; top: 75px; z-index: 1;}
+#gold{display: none;}
+.star-icon{position: absolute; left: 0; top: 0; z-index: 10;}
+.star-icon i{display: block; width: 25px; height: 42px; position: absolute; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/star-icon.png) no-repeat;}
+.star-icon i:nth-child(1){left: 115px; top: 204px; background-position: 0 0;}
+.star-icon i:nth-child(2){left: 310px; top: 275px; background-position: -29px 0;}
+.star-icon i:nth-child(3){left: 378px; top: 225px; background-position: -57px 2px;}
+.star-icon i:nth-child(4){left: 330px; top: 85px; background-position: -84px -1px;}
+.star-fixed{width: 286px; height: 157px; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/star-icon.png) no-repeat left -50px; position: absolute; top: 170px; left: 100px; z-index: 10;}
+#circle{display: block; width: 165px; height: 165px; border-radius: 50%; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/circle.jpg?v=1) no-repeat;}
+#lotteryMain{text-align: center;color: #fff; list-style: none;position: relative;z-index: 999;}
+#lotteryMain li{display: none;}
+.vph{padding-top: 50px;}
+.baozhen{padding-top: 35px;}
+.elm,.tongchen,.jiuxian,#expire,#lave_num{padding-top: 60px;}
+.btn{font-size: 30px; text-align: center; display:block; color: #b92004; background-color: #fceb54; border-radius: 15px; width: 348px; height: 82px; line-height: 82px; text-decoration: none; margin: 15px auto 0;}
+.form{width: 350px; margin: 0 auto;}
+.form-group{height: 70px; line-height: 70px; margin-top: 12px; background-color: #fff; border-radius: 10px;}
+.form-group label{width: 88px; height: 70px; text-align: right; color: #de0633; background-color: #ffc330; display: block; float: left; border-radius:10px 0 0 10px;} 
+.form-group input{width: 230px; height: 70px; float: left; background-color: #fff; border: none; padding: 0 10px; font-size: 24px; color: #de0633;}
+.libao-txt{text-align: left; width: 310px; margin: 0 auto; padding-bottom: 10px;}
+.mb15{margin-bottom: 15px;}
+#cdkey0,#cdkey4,#cdkey5,.g-item{-moz-user-select: text; -khtml-user-select:text; -webkit-user-select:text; user-select:text;}
+.game{width: 100%; height: 139px; background:url(http://images.vxinyou.com/gdjh/zt/shuangshiyi/gd.jpg) no-repeat; margin-top: 50px; position: relative;}
+.game-txt{float: left; padding:27px 0 0 130px; color: #fff; font-size: 24px;}
+.game-txt a{font-size: 34px; margin:0; font-weight: normal; text-decoration: none; color: #fff;}
+.game > a{display: block; float: right; width: 120px; height: 54px; line-height: 54px; text-align: center; border: 2px solid #fff; text-decoration: none; border-radius: 4px; margin:40px 20px 0 0; color: #fff; font-size: 24px; box-shadow: 0px 2px 3px #490500; text-shadow: 0px 2px 3px #490500;}
